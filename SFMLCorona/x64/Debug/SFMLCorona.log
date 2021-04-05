@@ -1,0 +1,7 @@
+﻿  simulator.cpp
+C:\Users\jaspe\source\repos\SFMLCorona\SFMLCorona\simulator.cpp(80,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jaspe\source\repos\SFMLCorona\SFMLCorona\simulator.cpp(81,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\jaspe\source\repos\SFMLCorona\SFMLCorona\simulator.cpp(87,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\jaspe\source\repos\SFMLCorona\SFMLCorona\simulator.cpp(89,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\jaspe\source\repos\SFMLCorona\SFMLCorona\simulator.cpp(110,65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  SFMLCorona.vcxproj -> C:\Users\jaspe\source\repos\SFMLCorona\x64\Debug\SFMLCorona.exe
