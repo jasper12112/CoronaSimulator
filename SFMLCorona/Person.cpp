@@ -113,7 +113,7 @@ void Person::Move(sf::Vector2f Loc, bool succes)
 {
 	if (state == Dead) return;
 	
-	if(GetDistance(LocationX, HomeLocation.x, LocationY, HomeLocation.y) <= 5 && CurrentStayTime < stayTime)
+	if(GetDistance(LocationX, HomeLocation.x, LocationY, HomeLocation.y) <= 2.5f && CurrentStayTime < stayTime)
 	{
 		CurrentStayTime++;
 	}

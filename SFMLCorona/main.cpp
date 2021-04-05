@@ -29,16 +29,11 @@ int main()
 	//Initialisers
 	int Current_Sim_Hours = 0;
 	int startInfected = 0;
-
-	bool playLoop = true;
 	
 	sf::RenderWindow* window;
 	window = new sf::RenderWindow(sf::VideoMode(1280, pFieldY), "CoronaSimulator", sf::Style::Close | sf::Style::Titlebar);
 	window->setFramerateLimit(FRAME_RATE_LIMIT);
 
-	//GRAPHS
-	//sf::VertexArray curveInfected(sf::PrimitiveType::LineStrip, 100);
-	//curveInfected.clear();
 	graph* curveInfected = new graph(0, 1280, 25);
 	graph* curveDead = new graph(0, 1280,  25);
 	graph* curveVulnerable = new graph(0, 1280, 25);
@@ -46,7 +41,6 @@ int main()
 
 	simulator* sim = new simulator(window);
 
-	
 	Person myPeople[TOTAL_PEOPLE];
 
 	while(window->isOpen())

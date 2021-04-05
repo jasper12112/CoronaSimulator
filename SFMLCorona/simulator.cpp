@@ -12,7 +12,7 @@ simulator::simulator(sf::RenderWindow* window)
 	this->window = window;
 	for (int k = 0; k < TOTAL_POPULAR_PLACES; k++)
 	{
-		populairPlaces.push_back(popularplace(sf::Color(110, 110, 110), 10, 18, 5));
+		populairPlaces.push_back(popularplace(sf::Color(110, 110, 110), 14, 16, 5));
 	}
 }
 
@@ -27,7 +27,6 @@ int randomFactor(int min, int max)
 
 void simulator::SimulateP(int i, int &totalInfactions, int &totalVulnerable, int &totalImmune, int &totalDead, sf::RenderWindow* window, Person myPeople[])
 {
-
 	if (randomFactor(0, 10) > CHANGE_GO_PLACE)
 	{
 		sf::Vector2f loc = getPPLoc();

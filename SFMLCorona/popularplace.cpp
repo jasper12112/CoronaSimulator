@@ -15,7 +15,9 @@ popularplace::popularplace(sf::Color color, int sizeX, int sizeY, int maxPeople)
 {
 	body.setFillColor(color);
 	body.setSize(sf::Vector2f(sizeX, sizeY));
-	body.setPosition(randomNumber(0, PFieldX), randomNumber(0, pFieldY));
+	Location = new sf::Vector2f(randomNumber(0, PFieldX), randomNumber(0, pFieldY));
+	
+	body.setPosition(Location->x - (sizeX / 2), Location->y - (sizeY / 2));
 	this->SizeX = sizeX;
 	this->SizeY = sizeY;
 	this->maxPeople = maxPeople;

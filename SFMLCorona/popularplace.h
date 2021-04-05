@@ -9,6 +9,8 @@ class popularplace
 		
 		sf::RectangleShape body;
 
+		sf::Vector2f* Location;
+
 		int maxPeople;
 		int currentPeople;
 	
