@@ -8,7 +8,7 @@
 #include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/System/Vector2.hpp>
 
-
+#pragma once
 #include "settings.h"
 
 graph::graph(int xStart, int limitX, int additional)

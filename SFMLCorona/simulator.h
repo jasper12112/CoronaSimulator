@@ -18,6 +18,8 @@ public:
 
 	void SimulatePlaces();
 
+	void RandomInfect(Person myPeople[]);
+
 	sf::Vector2f getPPLoc();
 };
 

@@ -4,8 +4,9 @@
 
 
 #include "Person.h"
-#include "settings.h"
 #include "simulator.h"
+
+#include "settings.h"
 
 simulator::simulator(sf::RenderWindow* window)
 {
@@ -101,6 +102,18 @@ void simulator::SimulatePlaces()
 	for(int i = 0; i < populairPlaces.size(); i++)
 	{
 		populairPlaces[i].draw(window);
+	}
+}
+
+void simulator::RandomInfect(Person myPeople[])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		int rand = randomFactor(0, TOTAL_PEOPLE);
+		if(myPeople[rand].state == Vulnerable)
+		{
+			myPeople[rand].state = Infected;
+		}
 	}
 }
 

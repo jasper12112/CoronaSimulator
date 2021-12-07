@@ -47,7 +47,7 @@ void Person::Draw(sf::RenderWindow* window, sf::Color color)
 	body.setFillColor(color);
 	window->draw(body);
 	
-	if(state == Infected)
+	if(state == Infected && SHOW_RADIUS)
 	{
 		window->draw(infectionRadius);
 	}

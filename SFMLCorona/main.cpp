@@ -2,10 +2,10 @@
 #include <iostream>
 #include <random>
 
-
 #include "graph.h"
 #include "simulator.h"
 #include "Person.h"
+#pragma once
 #include "settings.h"
 
 int randomLocation(int min, int max)
@@ -34,6 +34,9 @@ int main()
 	window = new sf::RenderWindow(sf::VideoMode(1280, pFieldY), "CoronaSimulator", sf::Style::Close | sf::Style::Titlebar);
 	window->setFramerateLimit(FRAME_RATE_LIMIT);
 
+	int currentFrameRate = FRAME_RATE_LIMIT;
+	int currentFrameRateIndex = 2;
+
 	graph* curveInfected = new graph(0, 1280, 25);
 	graph* curveDead = new graph(0, 1280,  25);
 	graph* curveVulnerable = new graph(0, 1280, 25);
@@ -58,8 +61,30 @@ int main()
 				case sf::Event::Closed:
 					window->close();
 					break;
+				case sf::Event::KeyPressed:
+					if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+					{
+						sim->RandomInfect(myPeople);
+					}
+					else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+					{
+						currentFrameRate = currentFrameRate + 10;
+						window->setFramerateLimit(currentFrameRate);
+					}
+					else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+					{
+						currentFrameRate = currentFrameRate - 10;
+						window->setFramerateLimit(currentFrameRate);
+					}
+					break;
 				}
 			}
+
+			//if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space))
+			//{
+			//	printf("ULTRA TRUE");
+			//	sim->RandomInfect(myPeople);
+			//}
 
 			window->clear(sf::Color::Black);
 			sim->SimulatePlaces();
@@ -80,7 +105,7 @@ int main()
 				sim->SimulateP(i, totalInfactions, totalVulnerable, totalImmune, totalDead, window, myPeople);
 			}
 
-			sim->BackFromVacation(totalInfactions, myPeople);
+			//sim->BackFromVacation(totalInfactions, myPeople);
 			
 			curveInfected->Draw(window);
 			curveDead->Draw(window);

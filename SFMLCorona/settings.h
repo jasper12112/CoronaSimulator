@@ -1,6 +1,7 @@
 #pragma once
 
 #define FRAME_RATE_LIMIT 75
+#define SPEEDARR [35, 50, 75, 100, 150]
 
 //Person info (TOTAL PEOPLE, SIZE OF PEOPLE)
 #define TOTAL_PEOPLE 100
@@ -22,6 +23,8 @@
 #define IMMUNE_TIME 500
 #define STAY_TIME 150
 #define PLAYER_SPEED .3
+
+#define SHOW_RADIUS 0
 
 //80 = 20%
 #define INFECTION_CHANCE 95
